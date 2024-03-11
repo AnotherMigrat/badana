@@ -1,0 +1,5 @@
+- name: running a comand
+  hosts: webservers
+  tasks:
+    - name: Run ls command
+      shell: ls
