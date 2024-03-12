@@ -1,5 +1,6 @@
 - name: running a comand
   hosts: webservers
+  remote_user: kingsley
   become: True
   tasks:
     - name: Run ls command

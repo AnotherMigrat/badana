@@ -1,2 +1,0 @@
-[linux-servers]
-target1 ansible_host= ansible_connection=ssh ansible_user=Kingsley
