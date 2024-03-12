@@ -15,4 +15,5 @@ jobs:
           uses: dawidd6/action-ansible-playbook@v2.8.0
           with:
             playbook: ansible.yml
+            inventory: inventory.yml
             directory: ./
