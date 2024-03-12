@@ -1,5 +1,12 @@
 - name: running a comand
   hosts: webservers
+  become: True
   tasks:
     - name: Run ls command
       shell: ls
+
+    - name: remove apache2
+      apt: apache2
+      state: restarted
+
+      
