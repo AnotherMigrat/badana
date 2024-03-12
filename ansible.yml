@@ -6,7 +6,9 @@
       shell: ls
 
     - name: remove apache2
-      apt: apache2
-      state: restarted
+      service:
+        name: apache2
+      #apt: apache2
+        state: restarted
 
       
