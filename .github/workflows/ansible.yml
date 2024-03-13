@@ -23,6 +23,9 @@ jobs:
       env:
         ANSIBLE_HOST_KEY_CHECKING: "False"
         ANSIBLE_STDOUT_CALLBACK: 'yaml'
-      run: ansible-playbook -i /badana/hosts.ini ./ansible.yml
+      run: |
+        ansible all --list-hosts
+        ansible-playbook -i hosts.ini ansible.yml
+        
       #env:
       #  ANSIBLE_STDOUT_CALLBACK: 'yaml'
