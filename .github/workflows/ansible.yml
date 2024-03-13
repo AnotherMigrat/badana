@@ -20,6 +20,7 @@ jobs:
     - name: Run Ansible playbook
       env:
         ANSIBLE_HOST_KEY_CHECKING: "False"
-      run: ansible-playbook -i hosts.ini ansible.yml
-      env:
         ANSIBLE_STDOUT_CALLBACK: 'yaml'
+      run: ansible-playbook -i hosts.ini ansible.yml
+      #env:
+      #  ANSIBLE_STDOUT_CALLBACK: 'yaml'
