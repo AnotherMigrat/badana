@@ -19,7 +19,7 @@ jobs:
       run: pip install ansible
 
     - name: Run Ansible playbook
-      working-directory: ./
+      working-directory: ./badana
       env:
         ANSIBLE_HOST_KEY_CHECKING: "False"
         ANSIBLE_STDOUT_CALLBACK: 'yaml'
