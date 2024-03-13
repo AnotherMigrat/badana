@@ -1,15 +1,21 @@
-- name: running a comand
-  hosts: all
-  remote_user: kingsley
-  become: True
-  tasks:
-    - name: Run ls command
-      shell: ls
+---
+- name: Install Apache2
+  hosts: web_servers
+  become: yes  # This allows the playbook to run with sudo privileges
 
-    - name: remove apache2
+  tasks:
+    - name: Update apt package index
+      apt:
+        update_cache: yes
+
+    - name: Install Apache2
+      apt:
+        name: apache2
+        state: present
+
+    - name: Ensure Apache2 service is running
       service:
         name: apache2
-      #apt: apache2
-        state: restarted
-
+        state: started
+        enabled: yes  # This ensures the Apache2 service starts on boot
       
